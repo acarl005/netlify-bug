@@ -1,4 +1,6 @@
-export default class Greeter {
+class Foo {}
+
+export default class Greeter extends Foo {
   static to(obj) {
     return new Greeter(`Hello, ${obj}!`)
   }
