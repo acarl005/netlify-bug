@@ -1,15 +1,7 @@
-class Foo {
-  constructor(msg) {
-    this.msg = msg
-  }
-}
+import { Deparser } from "pgsql-parser"
 
-export default class Greeter extends Foo {
-  static to(obj) {
-    return new Greeter(`Hello, ${obj}!`)
-  }
-
-  out() {
-    return this.msg
+export default class StrictDeparser extends Deparser {
+  static deparse(query, opts) {
+    return new StrictDeparser(query, opts).deparseQuery()
   }
 }
